@@ -1,28 +1,27 @@
-import React, {useState,useEffect} from 'react';
+import React, { useState, useEffect } from "react";
 
-import {Font} from "expo"
+import { AreaLogin, Container, LoginTextHeader, LogoImage } from "./styles";
 
-import { Container } from './styles';
+import LogoIMD from "../../assets/images/imdb.png";
 
-const Login = () => {
-  const [fontLoaded, setFontLoaded] = useState(false)
+import api from "../../services/api";
 
-  useEffect(()=>{
-    Font.loadAsync({
-      'Proxima-Nova-Thin':require("../../assets/fonts/Metropolis-Thin.otf"),
-      'Proxima-Nova-Thin-Italic':require("../../assets/fonts/Metropolis-ThinItalic.otf"),
-      'Proxima-Nova-Light':require("../../assets/fonts/Metropolis-Light.otf"),
-      'Proxima-Nova-Light-Italic':require("../../assets/fonts/Metropolis-LightItalic.otf"),
-      'Proxima-Nova-Regular':require("../../assets/fonts/Metropolis-Regular.otf"),
-      'Proxima-Nova-Regular-Italic':require("../../assets/fonts/Metropolis-RegularItalic.otf"),
-      'Proxima-Nova-Medium':require("../../assets/fonts/Metropolis-Medium.otf"),
-      'Proxima-Nova-Medium-Italic':require("../../assets/fonts/Metropolis-MediumItalic.otf"),
-      'Proxima-Nova-Bold':require("../../assets/fonts/Metropolis-Bold.otf"),
-      'Proxima-Nova-Bold-Italic':require("../../assets/fonts/Metropolis-BoldItalic.otf"),
-    })
-  },[])
+const Login = ({ navigation }) => {
+  const [emailTxt, setEmailTxt] = useState("");
+  const [passwordTxt, setPasswordTxt] = useState("");
 
-  return <Container />;
-}
+  useEffect(() => {
+    api.get("/users").then((res) => {});
+  }, []);
+
+  return (
+    <Container>
+      <LogoImage resizeMode="contain" source={LogoIMD} />
+      <AreaLogin>
+        <LoginTextHeader>Entre na sua conta</LoginTextHeader>
+      </AreaLogin>
+    </Container>
+  );
+};
 
 export default Login;
