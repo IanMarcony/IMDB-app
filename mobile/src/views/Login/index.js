@@ -1,18 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from 'react';
 
-import { AreaLogin, Container, LoginTextHeader, LogoImage } from "./styles";
+import {AreaLogin, Container, LoginTextHeader, LogoImage} from './styles';
 
-import LogoIMD from "../../assets/images/imdb.png";
+import LogoIMD from '../../assets/images/imdb.png';
 
-import api from "../../services/api";
+import api from '../../services/api';
 
-const Login = ({ navigation }) => {
-  const [emailTxt, setEmailTxt] = useState("");
-  const [passwordTxt, setPasswordTxt] = useState("");
-
+const Login = ({navigation}) => {
+  const [emailTxt, setEmailTxt] = useState('');
+  const [passwordTxt, setPasswordTxt] = useState('');
+  /*
   useEffect(() => {
     api.get("/users").then((res) => {});
   }, []);
+  */
 
   return (
     <Container>

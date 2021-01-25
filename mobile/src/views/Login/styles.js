@@ -18,9 +18,9 @@ export const AreaLogin = styled.View`
 
 export const LoginTextHeader = styled.Text`
   text-align: center;
-  font-size: 1.4rem;
-  color:${colors.header_color}
-  font-family:'Proxima-Nova-Bold';
+  font-size: 14;
+  //color: ${colors.header_color};
+  //  font-family:'Proxima-Nova-Bold';
 `;
 
 export const InputLogin = styled.TextInput`
@@ -37,7 +37,7 @@ export const AreaButtonRegister = styled.TouchableOpacity`
 
 export const TextButtonRegister = styled.Text`
   text-align: left;
-  font-size: 1rem;
-  color:${colors.accent_color}
-  font-family:'Proxima-Nova-Regular';
+  font-size: 12;
+  //color: ${colors.accent_color};
+  //font-family:'Proxima-Nova-Regular';
 `;
