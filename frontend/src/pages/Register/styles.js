@@ -8,6 +8,10 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   display: flex;
+  background-color: ${colors.primary_text_color};
+  @media screen and (max-width: 400px) {
+    width: 100vw;
+  }
 `;
 
 export const RegisterPanel = styled.div`
@@ -18,6 +22,7 @@ export const RegisterPanel = styled.div`
   border-style: solid;
   border-width: 1px;
   border-radius: 0.6rem;
+  background-color: ${colors.primary_color};
   border-color: ${colors.secondary_text_color};
 
   -webkit-box-shadow: -6px 6px 12px 2px rgba(0, 0, 0, 0.61);
@@ -25,6 +30,9 @@ export const RegisterPanel = styled.div`
   box-shadow: -6px 6px 12px 2px rgba(0, 0, 0, 0.61);
   display: flex;
   flex-direction: column;
+  @media screen and (max-width: 400px) {
+    width: 89vw;
+  }
 `;
 
 export const ImageLogo = styled.img`

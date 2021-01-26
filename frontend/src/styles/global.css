@@ -14,7 +14,8 @@ body {
 h1,
 h2,
 h3,
-a {
+a,
+span {
   font-family: "Roboto";
 }
 

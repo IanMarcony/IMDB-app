@@ -25,5 +25,5 @@ var middlewareAuth = require("../../controllers/UserController/middlewares/auth"
 var UserRouter = express_1.Router();
 UserRouter.get("/user", middlewareAuth, UserController.index); //só entra se tiver autenticado
 UserRouter.post("/user/register", UserController.create);
-UserRouter.get("/user/auth", UserController.auth);
+UserRouter.post("/user/auth", UserController.auth);
 exports.default = UserRouter;

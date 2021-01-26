@@ -8,6 +8,10 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   display: flex;
+  background-color: ${colors.primary_text_color};
+  @media screen and (max-width: 400px) {
+    width: 100vw;
+  }
 `;
 
 export const LoginPanel = styled.div`
@@ -18,6 +22,8 @@ export const LoginPanel = styled.div`
   border-style: solid;
   border-width: 1px;
   border-radius: 0.6rem;
+  background-color: ${colors.primary_color};
+
   border-color: ${colors.secondary_text_color};
 
   -webkit-box-shadow: -6px 6px 12px 2px rgba(0, 0, 0, 0.61);
@@ -25,6 +31,9 @@ export const LoginPanel = styled.div`
   box-shadow: -6px 6px 12px 2px rgba(0, 0, 0, 0.61);
   display: flex;
   flex-direction: column;
+  @media screen and (max-width: 400px) {
+    width: 89vw;
+  }
 `;
 
 export const ImageLogo = styled.img`
@@ -77,12 +86,16 @@ export const ButtonSubmitFormLogin = styled.button`
   color: ${colors.primary_color};
   font-weight: 400;
   border-style: none;
+  height: 2rem;
   font-size: 1.2rem;
 
   transition: opacity 0.2s;
 
   &:hover {
     opacity: 0.8;
+  }
+  @media screen and (max-width: 400px) {
+    font-size: 14pt;
   }
 `;
 
@@ -106,5 +119,12 @@ export const ButtonRegisterFormLogin = styled(Link)`
 
   &:hover {
     opacity: 0.8;
+  }
+  @media screen and (max-width: 400px) {
+    width: 50%;
+    font-size: 10pt;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 `;
