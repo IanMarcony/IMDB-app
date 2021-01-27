@@ -71,13 +71,11 @@ function create(req, res) {
                     return [4 /*yield*/, connection_1.default("users").where("email", email).first()];
                 case 1:
                     if (_b.sent())
-                        return [2 /*return*/, res.status(400).send({ message: "User already exists" })];
-                    return [4 /*yield*/, bcryptjs_1.default.hash(password, 10)]; //encriptação da senha
+                        return [2 /*return*/, res.status(400).send({ error: "User already exists" })];
+                    return [4 /*yield*/, bcryptjs_1.default.hash(password, 10)];
                 case 2:
-                    hash = _b.sent() //encriptação da senha
-                    ;
-                    userToDB = { name: name, email: email, password: hash } //salva a senha encriptada
-                    ;
+                    hash = _b.sent();
+                    userToDB = { name: name, email: email, password: hash };
                     return [4 /*yield*/, connection_1.default("users").insert(userToDB)];
                 case 3:
                     id = (_b.sent())[0];
@@ -104,7 +102,8 @@ function auth(req, res) {
                     user = _b.sent();
                     return [4 /*yield*/, bcryptjs_1.default.compare(password, user.password)];
                 case 3:
-                    if (!(_b.sent())) { //verifica se a senha existe no banco de dados
+                    if (!(_b.sent())) {
+                        //verifica se a senha existe no banco de dados
                         return [2 /*return*/, res.status(404).send({ error: "error: Invalid password" })];
                     }
                     user.password = undefined;
