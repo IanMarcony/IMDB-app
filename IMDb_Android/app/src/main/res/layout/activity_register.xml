@@ -6,18 +6,19 @@
     android:layout_height="match_parent"
     android:background="@color/primary_text_color"
     android:gravity="center"
-    tools:context=".views.MainActivity">
+    tools:context=".views.RegisterActivity">
+
 
     <LinearLayout
-       android:layout_width="0dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:padding="16dp"
         android:background="@drawable/style_panel"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/guideline7"
-        app:layout_constraintEnd_toStartOf="@+id/guideline5"
-        app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toTopOf="@+id/guideline6">
+        android:padding="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline8"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@+id/guideline3">
 
         <ImageView
             android:layout_width="80dp"
@@ -27,57 +28,71 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Faça seu Logon"
+            android:text="Crie sua conta agora!"
             android:textAlignment="center"
             android:textColor="@color/primary_text_color"
             android:textSize="30sp"
             android:textStyle="bold" />
+
         <EditText
-            android:id="@+id/input_email_login"
+            android:id="@+id/input_name_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@drawable/style_input"
+            android:hint="Insira seu nome"
             android:padding="4dp"
-            android:hint="Insira seu email"
-            android:textColorHint="@color/secondary_text_color"
             android:textColor="@color/secondary_text_color"
-            android:inputType="textEmailAddress"/>
+            android:textColorHint="@color/secondary_text_color" />
+
         <EditText
-            android:id="@+id/input_password_login"
+            android:id="@+id/input_email_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/style_input"
+            android:hint="Insira seu email"
+            android:inputType="textEmailAddress"
+            android:padding="4dp"
+            android:textColor="@color/secondary_text_color"
+            android:textColorHint="@color/secondary_text_color" />
+
+        <EditText
+            android:id="@+id/input_password_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/style_input"
-            android:padding="4dp"
             android:hint="Insira sua senha"
-            android:textColorHint="@color/secondary_text_color"
+            android:inputType="textPassword"
+            android:padding="4dp"
             android:textColor="@color/secondary_text_color"
-            android:inputType="textPassword"/>
+            android:textColorHint="@color/secondary_text_color" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="fill"
             android:orientation="horizontal">
+
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/button_enter_login"
+                android:id="@+id/button_create_register"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="Entrar"
-                android:textColor="@color/primary_color"
+                android:layout_marginRight="80dp"
                 android:background="@drawable/style_button"
-                android:layout_marginRight="100dp"
-                />
+                android:text="Criar"
+                android:textColor="@color/primary_color" />
+
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/button_create_login"
+                android:id="@+id/button_back_register"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="Criar Conta"
+                android:background="@drawable/style_button"
                 android:padding="5dp"
+                android:text="Voltar"
                 android:textColor="@color/primary_color"
-                android:background="@drawable/style_button"
 
                 />
         </LinearLayout>
@@ -85,31 +100,32 @@
     </LinearLayout>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
+        android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.1" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline5"
+        android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.9" />
+        app:layout_constraintGuide_percent="0.85888076" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline6"
+        android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.16" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline7"
+        android:id="@+id/guideline8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.77" />
+        app:layout_constraintGuide_percent="0.86" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
