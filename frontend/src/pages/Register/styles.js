@@ -9,8 +9,9 @@ export const Container = styled.div`
   justify-content: center;
   display: flex;
   background-color: ${colors.primary_text_color};
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 800px) {
     width: 100vw;
+    padding: 1rem;
   }
 `;
 
@@ -30,8 +31,8 @@ export const RegisterPanel = styled.div`
   box-shadow: -6px 6px 12px 2px rgba(0, 0, 0, 0.61);
   display: flex;
   flex-direction: column;
-  @media screen and (max-width: 400px) {
-    width: 89vw;
+  @media screen and (max-width: 800px) {
+    width: 100vw;
   }
 `;
 
@@ -108,7 +109,7 @@ export const ButtonBackFormRegister = styled(Link)`
   font-size: 1.2rem;
   text-align: left;
   text-decoration: none;
-  font-weight: 400;
+  font-weight: 8;
   padding: 1rem;
   transition: opacity 0.2s;
 

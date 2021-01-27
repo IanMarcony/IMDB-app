@@ -9,8 +9,9 @@ export const Container = styled.div`
   justify-content: center;
   display: flex;
   background-color: ${colors.primary_text_color};
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 800px) {
     width: 100vw;
+    padding: 1rem;
   }
 `;
 
@@ -31,8 +32,8 @@ export const LoginPanel = styled.div`
   box-shadow: -6px 6px 12px 2px rgba(0, 0, 0, 0.61);
   display: flex;
   flex-direction: column;
-  @media screen and (max-width: 400px) {
-    width: 89vw;
+  @media screen and (max-width: 800px) {
+    width: 100vw;
   }
 `;
 
@@ -94,7 +95,7 @@ export const ButtonSubmitFormLogin = styled.button`
   &:hover {
     opacity: 0.8;
   }
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 800px) {
     font-size: 14pt;
   }
 `;
@@ -110,7 +111,7 @@ export const ButtonRegisterFormLogin = styled(Link)`
 
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: 100%;
   text-align: left;
   text-decoration: none;
   font-weight: 400;
@@ -120,7 +121,7 @@ export const ButtonRegisterFormLogin = styled(Link)`
   &:hover {
     opacity: 0.8;
   }
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 800px) {
     width: 50%;
     font-size: 10pt;
     overflow: hidden;

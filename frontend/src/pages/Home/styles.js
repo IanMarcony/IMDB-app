@@ -7,7 +7,7 @@ export const Container = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 800px) {
     width: 100vw;
   }
 `;
@@ -19,7 +19,7 @@ export const HeaderHome = styled.header`
   background-color: ${colors.primary_text_color};
   display: flex;
   align-items: center;
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 800px) {
     width: 100vw;
   }
 `;
@@ -46,7 +46,7 @@ export const ImageLogo = styled.img`
   margin-right: 50%;
   justify-self: center;
   align-self: center;
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 800px) {
     margin-left: 25vw;
   }
 `;
@@ -75,7 +75,7 @@ export const SectionUsers = styled.section`
 
   margin-top: 1.9rem;
   padding: 2rem;
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 800px) {
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
   }
@@ -86,7 +86,7 @@ export const HeaderText = styled.h1`
   text-align: left;
   color: ${colors.primary_text_color};
   margin-bottom: 2rem;
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 800px) {
     font-size: 13pt;
     overflow: hidden;
     white-space: nowrap;
