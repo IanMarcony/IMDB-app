@@ -5,15 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primary_text_color"
+    android:backgroundTint="@color/primary_text_color"
     android:gravity="center"
     tools:context=".views.MainActivity">
 
     <LinearLayout
-       android:layout_width="0dp"
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:padding="16dp"
         android:background="@drawable/style_panel"
         android:orientation="vertical"
+        android:padding="16dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline7"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
@@ -32,17 +34,19 @@
             android:textColor="@color/primary_text_color"
             android:textSize="30sp"
             android:textStyle="bold" />
+
         <EditText
             android:id="@+id/input_email_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@drawable/style_input"
-            android:padding="4dp"
             android:hint="Insira seu email"
-            android:textColorHint="@color/secondary_text_color"
+            android:inputType="textEmailAddress"
+            android:padding="4dp"
             android:textColor="@color/secondary_text_color"
-            android:inputType="textEmailAddress"/>
+            android:textColorHint="@color/secondary_text_color" />
+
         <EditText
             android:id="@+id/input_password_login"
             android:layout_width="match_parent"
@@ -50,34 +54,36 @@
             android:layout_marginTop="15dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/style_input"
-            android:padding="4dp"
             android:hint="Insira sua senha"
-            android:textColorHint="@color/secondary_text_color"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:padding="4dp"
             android:textColor="@color/secondary_text_color"
-            android:inputType="textPassword"/>
+            android:textColorHint="@color/secondary_text_color" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="fill"
+            android:gravity="center"
             android:orientation="horizontal">
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button_enter_login"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="Entrar"
-                android:textColor="@color/primary_color"
+                android:layout_marginRight="80dp"
                 android:background="@drawable/style_button"
-                android:layout_marginRight="100dp"
-                />
+                android:text="Entrar"
+                android:textColor="@color/primary_color" />
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button_create_login"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="Criar Conta"
-                android:padding="5dp"
-                android:textColor="@color/primary_color"
                 android:background="@drawable/style_button"
+                android:padding="5dp"
+                android:text="Criar Conta"
+                android:textColor="@color/primary_color"
 
                 />
         </LinearLayout>
@@ -111,5 +117,16 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.77" />
+
+    <ProgressBar
+        android:id="@+id/loading_login"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:progressTint="@color/primary_text_color"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

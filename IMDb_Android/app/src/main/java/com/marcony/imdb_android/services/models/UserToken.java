@@ -1,13 +1,18 @@
 package com.marcony.imdb_android.services.models;
 
+import com.google.gson.annotations.SerializedName;
+
 public class UserToken {
     private User user;
     private String token;
+
 public UserToken(){}
     public UserToken(User user, String token) {
         this.user = user;
         this.token = token;
     }
+
+
 
     public User getUser() {
         return user;
