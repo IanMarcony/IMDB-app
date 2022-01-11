@@ -50,8 +50,9 @@ function Register() {
         password: passwordTxt,
       };
 
-      const { token } = await (await api.post("user/register", data_register))
-        .data;
+      const { token } = await (
+        await api.post("users/register", data_register)
+      ).data;
 
       await localStorage.setItem("token:imdb", token);
 

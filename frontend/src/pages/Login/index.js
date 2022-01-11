@@ -45,7 +45,7 @@ function Login() {
       return alert("Preencha todos os campos");
 
     api
-      .post("/user/auth", {
+      .post("/users/auth", {
         email: emailTxt,
         password: passwordTxt,
       })

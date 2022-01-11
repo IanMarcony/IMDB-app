@@ -42,7 +42,7 @@ function Home() {
   useEffect(() => {
     const AuthStr = "Bearer " + localStorage.getItem("token:imdb");
     api
-      .get("/user", { headers: { Authorization: AuthStr } })
+      .get("/users", { headers: { Authorization: AuthStr } })
       .then((res) => setUsers(res.data))
       .catch((err) => alert("Houve algum erro ao buscar os usuários. " + err));
   }, []);

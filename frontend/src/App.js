@@ -1,7 +1,7 @@
 import React from "react";
-import "./styles/global.css";
-
 import Routes from "./routes/Routes";
+import "./styles/global.css";
+import "dotenv/config";
 
 function App() {
   return <Routes />;
