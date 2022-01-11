@@ -1,16 +1,13 @@
-import {Router, Response,Request} from "express"
+import { Router, Response, Request } from "express";
 
-import UserRouter from "./UserRouter"
+import UserRouter from "./UserRouter";
 
-const routes = Router()
+const routes = Router();
 
+routes.use("/users", UserRouter);
 
-routes.use(UserRouter)
+routes.get("/", (req: Request, res: Response) => {
+  return res.status(200).send({ message: "Main Route" });
+});
 
-routes.get("/",  (req:Request,res:Response)=>{
-  return res.status(200).send({message:"Main Route"})
-})
-
-
-
-export default routes
+export default routes;

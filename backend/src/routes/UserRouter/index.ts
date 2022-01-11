@@ -6,8 +6,8 @@ const middlewareAuth = require("../../controllers/UserController/middlewares/aut
 
 const UserRouter = Router();
 
-UserRouter.get("/user", middlewareAuth, UserController.index); //só entra se tiver autenticado
-UserRouter.post("/user/register", UserController.create);
-UserRouter.post("/user/auth", UserController.auth);
+UserRouter.get("/", middlewareAuth, UserController.index); //só entra se tiver autenticado
+UserRouter.post("/register", UserController.create);
+UserRouter.post("/auth", UserController.auth);
 
 export default UserRouter;
