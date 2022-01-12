@@ -33,16 +33,19 @@
             android:src="@drawable/ic_imdb" />
     </androidx.appcompat.widget.Toolbar>
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@drawable/style_panel_home"
         android:gravity="center_horizontal"
-        android:padding="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline10">
+        app:layout_constraintTop_toTopOf="@+id/guideline10"
+        app:layout_constraintVertical_bias="0.0">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline15"
@@ -77,6 +80,7 @@
             android:layout_height="wrap_content"
             android:text="Pessoas que já  participam do IMDb"
             android:textAlignment="center"
+            android:paddingTop="12dp"
             android:textColor="@color/primary_text_color"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -89,8 +93,8 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:orientation="horizontal"
-            android:scrollbars="horizontal"
             android:padding="5dp"
+            android:scrollbars="horizontal"
             app:layout_constraintBottom_toTopOf="@+id/guideline14"
             app:layout_constraintEnd_toStartOf="@+id/guideline12"
             app:layout_constraintStart_toStartOf="@+id/guideline11"
@@ -107,14 +111,113 @@
             app:layout_constraintStart_toStartOf="@+id/list_users_home"
             app:layout_constraintTop_toTopOf="@+id/list_users_home" />
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.47" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/style_panel_home"
+            android:gravity="center_horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline9"
+            app:layout_constraintVertical_bias="0.0">
+
+
+            <TextView
+                android:id="@+id/title_list"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingTop="12dp"
+                android:text="Lista de Filmes"
+                android:textAlignment="center"
+                android:textColor="@color/primary_text_color"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/guideline13"
+                app:layout_constraintStart_toStartOf="@+id/guideline16"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/list_movies_home"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                android:scrollbars="horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/guideline21"
+                app:layout_constraintEnd_toStartOf="@+id/guideline13"
+                app:layout_constraintStart_toStartOf="@+id/guideline16"
+                app:layout_constraintTop_toBottomOf="@+id/title_list" />
+
+            <ProgressBar
+                android:id="@+id/loading_list_home"
+                style="@style/Widget.AppCompat.ProgressBar"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:progressTint="@color/primary_text_color"
+
+                app:layout_constraintBottom_toBottomOf="@+id/list_movies_home"
+                app:layout_constraintEnd_toStartOf="@+id/guideline13"
+                app:layout_constraintStart_toStartOf="@+id/list_movies_home"
+                app:layout_constraintTop_toBottomOf="@+id/title_list" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.91484183" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.06569343" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.69875777" />
+
+            <TextView
+                android:id="@+id/overviews_list"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingTop="12dp"
+                android:text="Overview"
+                android:textAlignment="textStart"
+                android:textColor="@color/primary_text_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline13"
+                app:layout_constraintStart_toStartOf="@+id/guideline16"
+                app:layout_constraintTop_toBottomOf="@+id/list_movies_home" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.16552667" />
+            android:id="@+id/guideline10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.16552667" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

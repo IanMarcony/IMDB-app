@@ -10,15 +10,15 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.marcony.imdb_android.R;
-import com.marcony.imdb_android.services.models.User;
+import com.marcony.imdb_android.services.models.backend.User;
 
 import java.util.List;
 
-public class MyRecycleViewAdapter extends RecyclerView.Adapter<MyRecycleViewAdapter.ViewHolder> {
+public class MyRecycleViewUserListAdapter extends RecyclerView.Adapter<MyRecycleViewUserListAdapter.ViewHolder> {
 
     private List<User> usersList;
 
-    public MyRecycleViewAdapter(List<User> usersList) {
+    public MyRecycleViewUserListAdapter(List<User> usersList) {
         this.usersList = usersList;
     }
 
@@ -37,14 +37,14 @@ public class MyRecycleViewAdapter extends RecyclerView.Adapter<MyRecycleViewAdap
 
     @NonNull
     @Override
-    public MyRecycleViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MyRecycleViewUserListAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.base_item_user,parent,false);
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyRecycleViewAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyRecycleViewUserListAdapter.ViewHolder holder, int position) {
         holder.nameUser.setText(usersList.get(position).getName());
 //        if(!usersList.get(position).getImage().isEmpty()){
 //            //holder.imageUser.setImageBitmap(); //Aqui usará o Picasso futuramente

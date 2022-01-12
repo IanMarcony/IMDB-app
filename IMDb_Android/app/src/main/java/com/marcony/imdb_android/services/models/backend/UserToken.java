@@ -1,6 +1,6 @@
-package com.marcony.imdb_android.services.models;
+package com.marcony.imdb_android.services.models.backend;
 
-import com.google.gson.annotations.SerializedName;
+import com.marcony.imdb_android.services.models.backend.User;
 
 public class UserToken {
     private User user;

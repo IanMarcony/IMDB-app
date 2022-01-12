@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">IMDb</string>
+    <string name="api_token">f49ec80be704d39e2f4a1aa24d71c81b</string>
 </resources>

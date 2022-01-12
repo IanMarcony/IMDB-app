@@ -7,22 +7,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.marcony.imdb_android.R;
-import com.marcony.imdb_android.services.api.Api;
-import com.marcony.imdb_android.services.api.BackendService;
-import com.marcony.imdb_android.services.models.User;
-import com.marcony.imdb_android.services.models.UserToken;
-
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.marcony.imdb_android.services.api_backend.Api;
+import com.marcony.imdb_android.services.api_backend.BackendService;
+import com.marcony.imdb_android.services.models.backend.User;
+import com.marcony.imdb_android.services.models.backend.UserToken;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -102,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
 
         User user = new User(email,password);
 
-        BackendService service = Api.service.create(BackendService.class);
+        BackendService service = Api.getInstanceBackend().create(BackendService.class);
 
         Call<UserToken> response = service.logoUser(user);
 
@@ -121,7 +116,6 @@ public class MainActivity extends AppCompatActivity {
                 SharedPreferences.Editor editor  = storage.edit();
                 editor.putString("imdb:token",userToken.getToken());
                 editor.apply();
-                Log.d("BLABLA", "onResponse: isTOKEN: "+storage.contains("imdb:token"));
                 loading.setVisibility(View.GONE);
                 btn_enter.setClickable(true);
                 btn_create.setClickable(true);
