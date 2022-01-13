@@ -53,6 +53,7 @@ export const ImageLogo = styled.img`
 
 export const Content = styled.main`
   display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100vh;
 `;
@@ -107,4 +108,48 @@ export const ListUsersArea = styled.ul`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+`;
+
+export const SectionListMovies = styled.section`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: max-content;
+
+  border-top-width: 2px;
+  border-top-color: ${colors.primary_color};
+  border-top-style: solid;
+  -webkit-box-shadow: 0px -5px 6px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px -5px 6px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px -5px 6px 0px rgba(0, 0, 0, 0.75);
+
+  border-top-left-radius: 4rem;
+  border-top-right-radius: 4rem;
+
+  margin-top: 1.9rem;
+  padding: 2rem;
+  @media screen and (max-width: 800px) {
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+  }
+`;
+
+export const ListMoviesArea = styled.ul`
+  width: 100%;
+  height: max-content;
+  margin: 0 auto;
+  overflow-x: auto;
+  &:empty {
+    overflow: hidden;
+  }
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const FooterText = styled.footer`
+  display: flex;
+  padding: 2rem;
 `;
