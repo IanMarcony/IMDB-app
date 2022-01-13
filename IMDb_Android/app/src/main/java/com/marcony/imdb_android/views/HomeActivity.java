@@ -124,7 +124,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void getAllMovies(){
-        loading.setVisibility(View.VISIBLE);
+        loadingTMDB.setVisibility(View.VISIBLE);
 
         TMDBService tmdbService = Api.getInstanceTMDB().create(TMDBService.class);
 
@@ -134,7 +134,8 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<ListMovie> call, Response<ListMovie> response) {
                 if(!response.isSuccessful()){
-                    loading.setVisibility(View.GONE);
+                    Log.d(TAG, "onResponse: "+response.toString());
+                    loadingTMDB.setVisibility(View.GONE);
                     Toast.makeText(getApplicationContext(), "Ocorreu algum erro ao acessar TMDB", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -146,14 +147,15 @@ public class HomeActivity extends AppCompatActivity {
                 MyRecycleViewMovieListAdapter adapter = new MyRecycleViewMovieListAdapter(response.body().getItems());
 
                 listMoviesView.setAdapter(adapter);
-                loading.setVisibility(View.GONE);
+                loadingTMDB.setVisibility(View.GONE);
 
             }
 
             @Override
             public void onFailure(Call<ListMovie> call, Throwable t) {
+                Log.d(TAG, "onFailure: "+call.request().toString());
                 t.printStackTrace();
-                loading.setVisibility(View.GONE);
+                loadingTMDB.setVisibility(View.GONE);
 
             }
         });
